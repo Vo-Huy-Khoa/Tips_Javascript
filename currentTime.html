@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOCK</title>
+</head>
+<style>
+    .container {
+        background-color: #E26960;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+        color: black;
+        font-size: 1rem;
+    }
+
+    img {
+        width: 300px;
+        height: 400px;
+        border-radius: 5%;
+    }
+
+    button {
+        background-color: black;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>LOLCAT CLOCK</h1>
+        <h2>I CAN HAZ TIME?</h2>
+        <h2 id="current-time">Current Time</h2>
+        <img src="https://s1.media.ngoisao.vn/resize_580/news/2021/07/31/le-phuong-anh-ngosaovn-2-ngoisaovn-w1536-h2048.jpg"
+            alt="hot girl">
+        <button>CURRENT TIME</button>
+    </div>
+</body>
+
+<script>
+    const textDate = document.querySelector('#current-time');
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+        const time = new Date();
+        const year = time.getFullYear();
+        const month = time.getMonth();
+        const date = time.getDate();
+        const hour = time.getHours();
+        const minutes = time.getMinutes();
+        const seconds = time.getSeconds();
+
+        const currentDate = `${year}/${month + 1}/${date}`;
+        const currentTime = `${hour}:${minutes}:${seconds}`;
+        
+        textDate.innerText = `
+                            ${currentDate}
+                            ${currentTime}                    
+        `;
+
+
+
+    })
+</script>
+
+</html>
