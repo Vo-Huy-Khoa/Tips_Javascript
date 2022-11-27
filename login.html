@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <style>
-
-        a{
-            text-decoration: none;
-            color: gray;
-        }
+      a {
+        text-decoration: none;
+        color: gray;
+      }
       .container {
-        height: 950px;
+        height: 920px;
         background-image: linear-gradient(to right, #2f7bb7, #8449ae);
         display: flex;
         justify-content: center;
@@ -43,26 +42,31 @@
         flex-direction: column;
         gap: 20px;
       }
-      input{
+      input {
+        box-sizing: border-box;
+        padding: 8px;
         height: 40px;
         border: none;
         border-bottom: 1px solid rgb(192, 189, 189);
       }
-      input:focus{
+      input:focus {
         outline: none;
       }
-      button{
+      button {
         border: none;
         border-radius: 20px;
-        background-color: #2691D9;
+        background-color: #2691d9;
         margin: 0 auto;
         width: 80%;
         height: 45px;
         color: white;
         font-size: 1rem;
       }
+      button:hover {
+        cursor: pointer;
+      }
       .signup a {
-        color: #2691D9;
+        color: #2691d9;
       }
     </style>
   </head>
@@ -71,10 +75,20 @@
       <div class="wrapper">
         <div class="header">Login</div>
         <form>
-          <input type="text" placeholder="Username" />
-          <input type="text" placeholder="Password" />
+          <input
+            id="username"
+            name="username"
+            type="text"
+            placeholder="Username"
+          />
+          <input
+            id="password"
+            name="password"
+            type="text"
+            placeholder="Password"
+          />
           <a href="">Forgot password? </a>
-          <button>Login</button>
+          <button type="button">Login</button>
         </form>
         <div class="signup">
           <span>Not a member?</span>
@@ -83,4 +97,17 @@
       </div>
     </div>
   </body>
+
+  <script>
+    const btn = document.querySelector("button");
+    const onclick = () => {
+      let username = document.getElementById("username");
+      let password = document.getElementById("password");
+      if ((username.value = "a")) {
+        username.style.border = "1px solid red";
+        username.style.borderRadius = "10px";
+      }
+    };
+    btn.addEventListener("click", onclick);
+  </script>
 </html>
