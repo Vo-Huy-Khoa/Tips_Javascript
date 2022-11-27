@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+
+        a{
+            text-decoration: none;
+            color: gray;
+        }
+      .container {
+        height: 950px;
+        background-image: linear-gradient(to right, #2f7bb7, #8449ae);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: gray;
+      }
+      .wrapper {
+        box-sizing: border-box;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: white;
+        width: 400px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .header {
+        color: black;
+        height: 50px;
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        border-bottom: 1px solid rgb(192, 189, 189);
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      input{
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid rgb(192, 189, 189);
+      }
+      input:focus{
+        outline: none;
+      }
+      button{
+        border: none;
+        border-radius: 20px;
+        background-color: #2691D9;
+        margin: 0 auto;
+        width: 80%;
+        height: 45px;
+        color: white;
+        font-size: 1rem;
+      }
+      .signup a {
+        color: #2691D9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Login</div>
+        <form>
+          <input type="text" placeholder="Username" />
+          <input type="text" placeholder="Password" />
+          <a href="">Forgot password? </a>
+          <button>Login</button>
+        </form>
+        <div class="signup">
+          <span>Not a member?</span>
+          <a href="">Signup</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
