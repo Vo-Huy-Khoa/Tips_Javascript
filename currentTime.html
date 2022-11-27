@@ -9,6 +9,7 @@
 </head>
 <style>
     .container {
+        height: 950px;
         background-color: #E26960;
         display: flex;
         align-items: center;
@@ -53,7 +54,8 @@
 <script>
     const textDate = document.querySelector('#current-time');
     const button = document.querySelector('button');
-    button.addEventListener('click', () => {
+
+    setInterval(() => {
         const time = new Date();
         const year = time.getFullYear();
         const month = time.getMonth();
@@ -61,18 +63,14 @@
         const hour = time.getHours();
         const minutes = time.getMinutes();
         const seconds = time.getSeconds();
-
         const currentDate = `${year}/${month + 1}/${date}`;
         const currentTime = `${hour}:${minutes}:${seconds}`;
-        
         textDate.innerText = `
                             ${currentDate}
                             ${currentTime}                    
         `;
+    }, 1000);
 
-
-
-    })
 </script>
 
 </html>
