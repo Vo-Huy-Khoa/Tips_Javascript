@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
       * {
         margin: 0;
@@ -100,6 +101,9 @@
         text-decoration: none;
         color: #265f72;
       }
+      li a:hover {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -120,14 +124,8 @@
         </section>
         <main>
           <div>
-            <input
-              onfocus="this.value=''"
-              type="text"
-              id="value"
-              placeholder="New item..."
-              value=""
-            />
-            <button>Add</button>
+            <input type="text" id="value" placeholder="New item..." value="" />
+            <button><i class="fa-solid fa-circle-plus"></i></i></button>
           </div>
           <ul></ul>
         </main>
@@ -135,6 +133,7 @@
     </div>
   </body>
 
+  <!-- action show is DOM -->
   <!-- <script>
     const btn = document.querySelector("button");
     const ul = document.querySelector("ul");
@@ -153,34 +152,36 @@
 
   <script>
     let todo = [];
-    const addTodo = () => {
-      var inputValue = document.querySelector("input").value;
-      todo.push(inputValue);
-    };
-
     const showTodo = () => {
       const ul = document.querySelector("ul");
       let html = "";
-      todo.map((item) => {
-        return (html += `<li><span>${item}</span><a>X</a></li>`);
+      todo.map((item, index) => {
+        return (html += `<li><span>${item}</span><a class="delete">X</a></li>`);
       });
       ul.innerHTML = html;
-
-      let dele = document.querySelector('a');
-      dele.onclick = () =>{
-  
+    };
+    const addTodo = () => {
+      var inputValue = document.querySelector("input");
+      todo.push(inputValue.value);
+      inputValue.value = "";
+      inputValue.focus();
+    };
+    const deleTodo = () => {
+      const deleTodo = document.querySelectorAll(".delete");
+      for (let i = 0; i < deleTodo.length; i++) {
+        deleTodo[i].onclick = function () {
+          this.parentNode.remove();
+        };
       }
     };
-
-    const deleTodo = (index) => {
-      
-      todo.pop(id);
-      showTodo();
-    };
-
     document.querySelector("button").onclick = () => {
-      addTodo();
-      showTodo();
+      if (document.querySelector("input").value.length == 0) {
+        alert("Please Enter The Value");
+      } else {
+        addTodo();
+        showTodo();
+        deleTodo();
+      }
     };
   </script>
 </html>
