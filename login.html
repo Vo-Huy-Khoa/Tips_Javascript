@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
       a {
         text-decoration: none;
@@ -43,6 +50,7 @@
         gap: 20px;
       }
       input {
+        border-radius: 10px;
         box-sizing: border-box;
         padding: 8px;
         height: 40px;
@@ -51,6 +59,29 @@
       }
       input:focus {
         outline: none;
+      }
+      /* input:invalid {
+        border: 2px solid red;
+      }
+
+      input:valid {
+        border: 2px solid green;
+      } */
+      .password {
+        position: relative;
+        width: 100%;
+      }
+      .password input {
+        width: 100%;
+      }
+      i {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      i:hover {
+        cursor: pointer;
       }
       button {
         border: none;
@@ -80,13 +111,18 @@
             name="username"
             type="text"
             placeholder="Username"
+            required
           />
-          <input
-            id="password"
-            name="password"
-            type="text"
-            placeholder="Password"
-          />
+
+          <div class="password">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Password"
+            />
+            <i class="fa-solid fa-eye-slash"></i>
+          </div>
           <a href="">Forgot password? </a>
           <button type="button">Login</button>
         </form>
@@ -100,14 +136,18 @@
 
   <script>
     const btn = document.querySelector("button");
-    const onclick = () => {
-      let username = document.getElementById("username");
-      let password = document.getElementById("password");
-      if ((username.value = "a")) {
-        username.style.border = "1px solid red";
-        username.style.borderRadius = "10px";
-      }
+    let username = document.getElementById("username");
+    let password = document.getElementById("password");
+    let showPassword = document.querySelector("i");
+
+    const handlePassword = () => {
+      password.type = password.type == "password" ? "text" : "password";
     };
-    btn.addEventListener("click", onclick);
+    showPassword.addEventListener("click", handlePassword);
+
+
+    btn.onclick = () =>{
+      username.setCustomValidity("message");
+    }
   </script>
 </html>
