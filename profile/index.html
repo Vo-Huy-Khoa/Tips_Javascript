@@ -13,13 +13,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
   </head>
   <body>
     <div class="container">
       <nav>
-        <img src="https://i.ibb.co/hRvwP2K/image.png" alt="Vo Huy Khoa" />
-        <ul>
+        <img
+          class="nav__avatar"
+          src="https://i.ibb.co/hRvwP2K/image.png"
+          alt="Vo Huy Khoa"
+        />
+        <ul class="nav__content">
           <li>about</li>
           <li>experience</li>
           <li>portfolio</li>
@@ -30,17 +33,17 @@
       </nav>
       <div class="wrapper">
         <header>
-          <div class="info">
-            <img src="" alt="" />
-            <h1 class="info__heading">Vo Huy Khoa</h1>
-            <span class="info__subheading">WEB DEVELOPMENT AT DIPRO</span>
-            <span class="info__content"
+          <div class="header">
+            <img class="header__avatar" src="" alt="" />
+            <h1 class="header__heading">Vo Huy Khoa</h1>
+            <span class="header__subheading">WEB DEVELOPMENT AT DIPRO</span>
+            <span class="header__content"
               >Huy Khoa Vo is my name. I'm a meticulous and hardworking
               individual. I'm keen to acquire new skills and work well with
               others. I quickly adjust to new working conditions and show
               initiative at work.</span
             >
-            <div class="info__icon">
+            <div class="header__icon">
               <i class="fa fa-facebook"></i>
               <i class="fa fa-linkedin"></i>
               <i class="fa fa-github"></i>
@@ -50,27 +53,27 @@
         </header>
         <main>
           <aside class="experience">
-            <h1>EXPERIENCE</h1>
+            <h1 class="exp__title">EXPERIENCE</h1>
             <div class="exp__item">
-              <h1>Web Developer</h1>
-              <span>Web Development in Dipro Da Nang</span>
-              <a href="">March 2022 - Present</a>
+              <h1 class="exp__item--title">Web Developer</h1>
+              <span class="exp__item--description"
+                >Web Development in Dipro Da Nang</span
+              >
+              <a class="exp__item--time" href="">March 2022 - Present</a>
             </div>
           </aside>
-
-          <aside class="portfolio">
+          <aside class="port">
             <h1>PORTFOLIO</h1>
             <div class="port__tab">
               <button>ALL</button>
               <button>Website</button>
             </div>
             <div class="port__project">
-              <div class="port__project-item"></div>
-              <div class="port__project-item"></div>
-              <div class="port__project-item"></div>
+              <div class="project__item"></div>
+              <div class="project__item"></div>
+              <div class="project__item"></div>
             </div>
           </aside>
-
           <aside class="skill">
             <h1>CODING SKILLS</h1>
             <div class="skill__content">
@@ -135,7 +138,7 @@
           </aside>
         </main>
         <footer>
-          <div class="contact-form">
+          <div class="footer__form">
             <form>
               <input type="" name="" value="" />
               <input type="" name="" value="" />
@@ -143,28 +146,33 @@
               <button>SEND</button>
             </form>
           </div>
-          <div class="contact-info">
-            <div class="contact-info__item">
+          <div class="footer__info">
+            <div class="info__item">
               <i class="fa fa-address-book"></i>
-              <h1>Address</h1>
-              <span>Binh Chan, Thang Binh, Quang Nam</span>
+              <h1 class="info__item--title">Address</h1>
+              <span class="info__item--description"
+                >Binh Chan, Thang Binh, Quang Nam</span
+              >
             </div>
-            <div class="contact-info__item">
+            <div class="info__item">
               <i class="fa fa-phone"></i>
-              <h1>Address</h1>
-              <span>Binh Chan, Thang Binh, Quang Nam</span>
+              <h1 class="info__item--title">Address</h1>
+              <span class="info__item--description"
+                >Binh Chan, Thang Binh, Quang Nam</span
+              >
             </div>
-            <div class="contact-info__item">
+            <div class="info__item">
               <i class="fa fa-terminal"></i>
-              <h1>Address</h1>
-              <span>Binh Chan, Thang Binh, Quang Nam</span>
+              <h1 class="info__item--title">Address</h1>
+              <span class="info__item--description"
+                >Binh Chan, Thang Binh, Quang Nam</span
+              >
             </div>
-            <div class="contact-info__item"></div>
+            <div class="info__item"></div>
           </div>
         </footer>
       </div>
     </div>
-
     <script src="scripts.js"></script>
   </body>
 </html>
