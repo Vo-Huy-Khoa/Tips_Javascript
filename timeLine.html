@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        background-color: gray;
+      }
+
+      li {
+        list-style-type: none;
+      }
+      .container {
+        position: relative;
+        padding: 50px;
+      }
+
+      .container::after {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 5px;
+        height: 100%;
+        content: "";
+        background-color: white;
+        transform: translateX(-50%);
+      }
+
+      .right {
+        left: 50%;
+      }
+
+      .right::after {
+        left: -16px;
+      }
+
+      li {
+        position: relative;
+        display: block;
+        max-width: 50%;
+        padding: 10px 40px;
+      }
+
+      .content {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #fff;
+        position: relative;
+      }
+
+      .l::after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: -10px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 10px;
+        border-color: red red red red;
+      }
+
+      .r::after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: -10px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+      /* The circles on the timeline */
+      li::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background-color: white;
+        border: 4px solid #ff9f55;
+        top: 15px;
+        right: -17px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul>
+        <li class="left">
+          <div class="content l">
+            <h1>block 1</h1>
+            <span
+              >Một tính năng đặc biệt hơn chính là kích hoạt tính năng kéo và
+              thả để di chuyển các việc cần làm từ các danh sách và các cột khác
+              nhau.
+            </span>
+          </div>
+        </li>
+        <li class="right">
+          <div class="content r">
+            <h1>block 2</h1>
+            <span
+              >Một tính năng đặc biệt hơn chính là kích hoạt tính năng kéo và
+              thả để di chuyển các việc cần làm từ các danh sách và các cột khác
+              nhau.
+            </span>
+          </div>
+        </li>
+        <li class="left">
+          <div class="content l">
+            <h1>block 3</h1>
+            <span
+              >Một tính năng đặc biệt hơn chính là kích hoạt tính năng kéo và
+              thả để di chuyển các việc cần làm từ các danh sách và các cột khác
+              nhau.
+            </span>
+          </div>
+        </li>
+        <li class="right">
+          <div class="content r">
+            <h1>block 4</h1>
+            <span
+              >Một tính năng đặc biệt hơn chính là kích hoạt tính năng kéo và
+              thả để di chuyển các việc cần làm từ các danh sách và các cột khác
+              nhau.
+            </span>
+          </div>
+        </li>
+        <li class="left">
+          <div class="content l">
+            <h1>block 5</h1>
+            <span
+              >Một tính năng đặc biệt hơn chính là kích hoạt tính năng kéo và
+              thả để di chuyển các việc cần làm từ các danh sách và các cột khác
+              nhau.
+            </span>
+          </div>
+        </li>
+
+        <li class="right">
+          <div class="content r">
+            <h1>block 6</h1>
+            <span
+              >Một tính năng đặc biệt hơn chính là kích hoạt tính năng kéo và
+              thả để di chuyển các việc cần làm từ các danh sách và các cột khác
+              nhau.
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
